@@ -7,7 +7,7 @@ description: OtO at a glance, Registration, update
 
 {$frontmatter.description}
 
-This offline version may not be 100% up to date. Get the latest version at [https://help.teleprompter.best](https://help.teleprompter.best)
+This offline version may not be 100% up to date. Get the latest version at [https://help.oto.software](https://help.oto.software)
 
 ![oto-interface](/interface.png)
 
@@ -77,7 +77,7 @@ When you open OtO, you will see this registration module:
 
 - The demo mode gives you access to all OtO features, including the "Network" version. It is not time-limited, but it will display a watermark on the prompter screen.
 
-- You can obtain a license by clicking the "Buy License" button or visiting [https://teleprompter.best#licensing](https://teleprompter.best#licensing).
+- You can obtain a license by clicking the "Buy License" button or visiting [https://oto.software#licensing](https://oto.software#licensing).
 
 ## Changing Your License
 

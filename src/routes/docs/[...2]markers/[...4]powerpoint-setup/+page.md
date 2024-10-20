@@ -9,7 +9,7 @@ OtO allows remote control of PowerPoint slide transitions using a dedicated util
 
 ![otoslides](/otoslides.jpg)
 
-To control the progress of a PowerPoint slideshow from OtO, you need to install the small utility "OtO Slide Controller" on the machine running the slideshow, which is available for download [here](https://teleprompter.best/otoslides).
+To control the progress of a PowerPoint slideshow from OtO, you need to install the small utility "OtO Slide Controller" on the machine running the slideshow, which is available for download [here](https://oto.software/otoslides).
 
 sOnce this application is installed on the other machine (or it can be the same machine), launch it, take note of the IP address displayed in the application, and set your presentation to full-screen slideshow mode.
 
