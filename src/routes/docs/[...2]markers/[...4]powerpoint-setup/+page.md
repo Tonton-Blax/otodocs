@@ -3,17 +3,29 @@ title: Powerpoint Markers
 ---
 # {$frontmatter.title}  
 
-OtO allows remote control of PowerPoint slide transitions using a dedicated utility called OtO Slides, which can be installed on a remote machine (or even on the same machine). Action Markers starting with //ppt enable navigation to any specific slide.
+OtO allows you to control PowerPoint slide transitions in two ways:
 
-## Setting-up powerpoint server
+1. From the *same machine*, [directly via OtO](#controlling-powerpoint-locally) – This feature is available in OtO's ["Live" and "Network"](/docs/oto-basics/licensing#oto-versions) versions.
+
+2. To any machine running PowerPoint, connected to the same network, [*via the "OtO Slide Controller" utility*](#controlloing-powerpoint-from-network).  
+This feature is only available with the "Network" version. However, you can try it with OtO's demo version.
+
+## Controlling PowerPoint Locally
+
+To control PowerPoint locally, simply launch PowerPoint on your computer and activate slideshow mode.  
+You'll need two screens: the first will be used to control OtO, and the second will be dedicated to displaying the full-screen slideshow.
+
+- If you have the **Live** version, all you need to do is [set up your Action Markers](#creating-a-powerpoint-marker).  
+- If you have the **Network** version, **make sure to disable** the *"Connect to PPT Server"* option in `Settings -> Network`, as this is used for network connectivity and every `//ppt` marker would then try to trigger a remote PowerPoint server.
+
+## Controlloing PowerPoint from network
 
 ![otoslides](/otoslides.jpg)
 
-To control the progress of a PowerPoint slideshow from OtO, you need to install the small utility "OtO Slide Controller" on the machine running the slideshow, which is available for download [here](https://oto.software/otoslides).
+To control the progress of a remote PowerPoint slideshow from OtO, you need to install the small utility "OtO Slide Controller" on the machine running the slideshow, which is available for download [here](https://oto.software/otoslides).
 
-sOnce this application is installed on the other machine (or it can be the same machine), launch it, take note of the IP address displayed in the application, and set your presentation to full-screen slideshow mode.
-
-Back in OtO, go to the `Settings -> Network` then in the field *"Powerpoint Server configuration"*, enable the network PowerPoint option, and enter the IP address (the IP will be displayed in **otslides** user interface). 
+Once this application is installed on the other machine (or it can be the same machine), launch it, take note of the IP address displayed in the application, and set your presentation to full-screen slideshow mode.
+Launch PowerPoint in slideshow mode, then, back in OtO, go to the `Settings -> Network` then in the field *"Powerpoint Server configuration"*, enable the network PowerPoint option, and enter the IP address (the IP will be displayed in **otslides** user interface). 
 
 
 :::admonition type=warning
