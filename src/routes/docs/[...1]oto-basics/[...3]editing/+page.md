@@ -9,14 +9,14 @@ In the following chapters, you'll learn how to import and edit documents, adjust
 
 ## Importing Documents
 
-- OtO can import any _.docX_ file. To do so, Either click on the <Icon d="importWord" /> toolbar icon or click on the `File → Import docX` menu.
+- OtO can import any _.docX_ file. To do so, Either click on the <Icon d="importWord" /> toolbar icon or click on the ***File*** then ***"Import docX"*** menu.
 - You can also Copy → Paste text content from any third-party software though we **strongly** suggest the .docX import way (less prone to formatting issues)
 - You can select and open multiple files at once, they will appear in the Rundown&nbsp;/&nbsp;Document list panel <Number n="3"/>.
-- To _save_ your new project, just click on the <Icon d="save" /> toolbar icon or click on the `File → save` or `File → save as` shortcut item and enter a name for your project, it will create a file with a _.prompt_ extension at the selected location.
-- You can also import a project within an existing project by cliking on `File → Import project` menu item, which will basically merge the imported project with your current project.
+- To _save_ your new project, just click on the <Icon d="save" /> toolbar icon or click on the ***File*** then ***"save"*** or ***"save as"***` shortcut item and enter a name for your project, it will create a file with a _.prompt_ extension at the selected location.
+- You can also import a project within an existing project by cliking on **File** menu then **"Import project"** menu item, which will basically merge the imported project with your current project.
 
 :::admonition type=tip
-You may also use keyboard shortcuts(click on the `File` menu to see the shortcut for some of the above commands)
+You may also use keyboard shortcuts(click on the **File** menu to see the shortcut for some of the above commands)
 :::
 
 ## Editing Documents
@@ -48,7 +48,7 @@ When lost between the two editing panels ( <Number n="2"/> and  <Number n="4"/> 
 :::
 
 :::admonition type=tip
-If you're using OtO as a presentation helper tool rather than a teleprompting tool, you can enlarge the black **"Prompter Safe View"** to the whole Editor Panel by setting the Aspect Ratio Setting in `Settings` → `General` to "disable"
+If you're using OtO as a presentation helper tool rather than a teleprompting tool, you can enlarge the black **"Prompter Safe View"** to the whole Editor Panel by setting the Aspect Ratio Setting in `⚙ Settings` → `General` to "disable"
 :::
 
 ## Rundown Panel <Number n="3"/>
@@ -71,3 +71,36 @@ The _Markers_ sub-panel <Number n="5"/> keeps track of markers (which function l
 :::admonition type=info
 Markers are a key feature of OtO, and we strongly recommend reading the dedicated chapters to fully leverage their potential.
 :::
+
+## Setting Margins and Offsets
+
+![margins](/margins.jpg)
+
+Clicking on the <Icon d="margins" /> icon in the toolbar opens the **margins** dropdown which allows you to adjust the following settings across all documents within the current OtO project:
+
+- **Left and right margins** (useful for adapting to screens or monitors that don’t display 100% of the image), specified in pixels.
+- **Line height** as a percentage, to control line spacing.
+- **Vertical offset of Action Markers**, specified in pixels.<br>
+  This last parameter enables you to trigger Action Markers slightly earlier (negative values) or slightly later (positive values) based on the number of pixels you enter.
+
+#### **Important:**
+These values are saved within each specific OtO project, meaning they will not carry over to other projects, unlike a general `Setting`.
+
+However, you can set **default** values for these adjustments by going to:<br>
+- `⚙ Settings` → `General` → `Default safe text margins` for left and right margins.
+- `⚙ Settings` → `General` → `Default Font Settings` for line height.
+- `⚙ Settings` → `Markers and Timers` → `Action Marker Vertical Offset in Pixels` for the default marker offset.
+
+:::admonition type="warning"
+- The `⚙ Settings` → `Markers and Timers` → `Action Marker Vertical Offset in Pixels` setting for default marker offset should not be confused with the `Scroll Offset ▶ cue indicator` setting, which controls the offset (in pixels) when navigating between markers.
+:::
+
+## Languages and Scripts
+
+- **Alphabets:** <br>
+  We’ve carefully selected two typefaces with various styles to cover all teleprompter readability needs across different languages and scripts. IBM Plex and its variants support over a hundred languages and more than seven alphabets, including Arabic, Cyrillic, Devanagari, Greek, Hebrew, Japanese, Korean, and Thai. Roboto covers Latin, Cyrillic, and Greek alphabets. Additionally, we’ve incorporated Noto SC for Simplified Chinese and Noto HK for Hong Kong Chinese.
+
+- **Script Directions:** <br>
+  Script directionality is mostly automated. When you import a .docX document, notes from a PowerPoint, or even paste text, OtO will automatically detect whether the script is "Left-to-Right" or "Right-to-Left." However, you can manually set the script’s language by right-clicking on the script line in the [Rundown Panel](/docs/oto-basics/rundown) or clicking <Number n="3F" /> `...` at the end of the line and selecting `Languages`, as shown below.
+
+![languages](/languages.jpg)

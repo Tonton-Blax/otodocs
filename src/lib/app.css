@@ -56,6 +56,24 @@
   --kd-main-padding-x: 1rem;
 }
 
+.dark .svg-schema {
+  & span,
+  & div font {
+    color: white;
+  }
+  font-weight: 100;
+  & path[fill="#333333"] {
+    fill: white;
+  }
+  & path[stroke="#333333"],
+  & path[stroke="rgb(0, 0, 0)"] {
+    stroke: white;
+  }
+  & [data-drawio-colors] > div {
+    background: transparent !important;
+  }
+}
+
 @media screen and (min-width: 992px) {
   :root {
     --kd-main-padding-x: 4rem;

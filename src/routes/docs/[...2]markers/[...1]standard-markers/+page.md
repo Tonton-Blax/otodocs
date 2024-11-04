@@ -54,7 +54,15 @@ To find the same text across editors, select one or more words and click the but
 To move to the next or previous marker, you can either:
 - Click the buttons <Icon d="previousMarker" /> or <Icon d="nextMarker" />
 - Use the shortcut on your physical controller (you can change the assignments in `Settings -> Controllers` then bind the input for the "Next" and "Previous" markers)
-- The default keyboard shortcuts are `CTRL+PAGEDOWN` and `CTRL+PAGEUP` 
+- The default keyboard shortcuts are `CTRL+PAGEDOWN` and `CTRL+PAGEUP`
+
+- Last but not least, when navigating between markers, you can choose either to scroll the text so that the marker lands at the bottom of the screen—giving you, for example, time to anticipate upcoming Action Markers—or to scroll the text so that the marker aligns precisely with the cue indicator ▶. If desired, you can add an offset of +/- 150 pixels to fine-tune this positioning. Go to `⚙ Settings` → `Markers and Timers` → `Scroll Offset ▶ cue indicator` to enable or disable this behavior and set the aforementioned offset.
+  
+![marker-on-scroll-setting](/marker-scroll-offset.jpg)
+
+:::admonition type="warning"
+- This `Scroll Offset ▶ cue indicator` which controls the offset (in pixels) when navigating between markers setting for should not be confused with  `⚙ Settings` → `Markers and Timers` → `Action Marker Vertical Offset in Pixels`, which sets the default offset for triggering Action Markers 
+:::
 
 
 ## Deleting a Marker

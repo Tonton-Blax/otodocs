@@ -7,18 +7,36 @@ One of OtO’s missions is to restore the speaker’s role as the conductor. Tha
 
 ## How do Action Markers work?
 
-ActionMarkers are first created as standard markers, meaning you need to select a portion of text and then either click the button or use the shortcut `CTRL + M` or  `⌘ + M`. Afterward, to "convert" them into Action Markers, you must use a specific syntax, as explained below.
+ActionMarkers are just like other markers, except they trigger events (like passing slides, playing videos or sounds etc.) when the text scrolls and the marker passes in front of the **▶** cue indicator.
+
+ActionMarkers are first created as standard markers, meaning you need to select a portion of text and then either click <Icon d="addMarker"/> the button or use the shortcut `CTRL + M` or  `⌘ + M`. Afterward, to "convert" them into Action Markers, you must use a specific syntax, as explained below.
+
 This syntax determines the type of action the marker will trigger, allowing you to control external events, such as slides, sounds, or videos, during your presentation.
 
-**ActionMarkers are triggered in prompter mode only**, when the text scrolls and the marker passes in front of the **▸** cue indicator.
+**ActionMarkers are automatically triggered in prompter mode only**, when the text scrolls and the marker passes in front of the **▶** cue indicator.
+
 This ensures that actions are executed precisely at the right moment during the presentation or performance, aligned with the speaker's pace.
 The trigger is signaled by a slight flash lasting about one second.
+
 :::admonition type=tip
-You may still manually trigger action markers on certain conditions, [see below to know how](#manually-trigger-an-action-marker)
+You may still manually trigger action markers on certain conditions, [see below to know how](#manual-triggering)
 :::
 
+:::admonition type=info 
+***MARKER OFFSET SHIFT***
 
-When the `Show timer` option is enabled (Option Menu → Show Timer), the remaining time before the next Action Marker will be displayed as a countdown and will adjust according to the scrolling speed. This allows you—and potentially your team—to anticipate the upcoming event. It can be a valuable tool for cue operators, speakers, and stage managers!
+The actionMarkers will be triggered as the text scrolls and the marker passes in front of the ▶ cue indicator.
+You can fine-tune the vertical offset (relative to the ▶ cue indicator position) in the **margins** dropdown. Click  <Icon d="margins" /> icon in the toolbar and enter a positive or negative value in the "Action Marker vertical Offset in pixels"
+ ![margins](/margins.jpg)
+:::
+
+## Time to next ActionMarker
+
+When the `Show timer` option is enabled (**Option** Menu → then **Show Timer**), the remaining time before the next Action Marker will be displayed as a countdown and will adjust according to the scrolling speed. This allows you—and potentially your team—to anticipate the upcoming event. It can be a valuable tool for cue operators, speakers, and stage managers!
+
+You may also display (or hide) this countdown on the *prompter window* or external screen.
+To do so, go to `⚙ Settings` -> `Markers and Timers` -> then `Show markers on external display`, and enable *"Show Time to Next Action Marker"*.
+See the [Overlay chapter](/docs/advanced/overlays) to get more detailed informations.
 
 ![show-timer](/show-timer.jpg)
 
@@ -111,16 +129,14 @@ If you want to change to next slide and play a sound simultaneously, the actionM
 `//ppt:next|midi:e2`
 
 
-:::admonition type=info 
-***MARKER OFFSET SHIFT***
-The actionMarkers will be triggered as the text scrolls and the marker passes in front of the ▸ cue indicator.
-You can fine-tune the vertical offset (relative to the cue indicator position) in the `Settings -> Markers and Timers` then, enter a positive or negative value in the "Action Marker vertical Offset in pixels"
-:::
-
-## Manually Trigger an Action Marker
+## Manual triggering
 There are 3 different ways of manually triggering an action Marker
-1. Uou can disable the **"Trigger Marker Action on Scroll"** option in:<br> `Settings` -> `Markers and Timers` -> `Advanced Settings for Action Markers`.<br>
-This way, markers will no longer activate on scroll but instead will be triggered by clicking the target button next to the marker name, which will change to a "play" button in this mode.
+1. You can disable the **"Trigger Marker Action on Scroll"** option in:<br> `⚙ Settings` -> `Markers and Timers` -> `Advanced Settings for Action Markers`.<br>
+
+This way, markers will no longer activate on scroll but instead will be triggered by clicking the target button next to the marker name, which will change to a "play" button in this mode (double-click on it to actually trigger the marker).
+
+This mode can be very useful for rehearsals, for example, where you may not want to trigger events at every turn.
+
 ![marker-play](/marker-play.jpg)
 
 2. Also, whatever the mode you're in (*prompting mode* or not), you can always trigger any action marker by **right clicking** the marker's name and then select

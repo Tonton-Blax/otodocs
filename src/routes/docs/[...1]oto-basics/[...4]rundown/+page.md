@@ -27,6 +27,7 @@ The document tools menu, accessible by clicking on the three dots `...` at the e
     While the `Insert Line Breaks` algorithm works well in most cases, it's important to proofread the text afterward. Some punctuation may be misinterpreted, causing unwanted line breaks.
     :::
 - **`Split at Cursor`**: Splits the text at the cursor position, creating a new document from the second half.
+- **`Merge`**: First select two or more documents, and they will be merged into one
 - **`Allow Hyphens`**: Activates dynamic hyphenation without altering the actual text. The hyphenation reflects the document's language, which can be manually adjusted if incorrectly detected. You can turn off this feature at any time without needing to reformat the text.
 - **`Enhance Text Balance`**: Activates the "Balanced Text" mode, which prevents widows and orphans (e.g., single short words on a line), restructuring the overall text for improved readability. Like hyphenation, this feature doesn't alter the actual text and can be toggled off without reformatting.
 - **`Document Language`**: Allows you to manually change the document's language to optimize hyphenation and improve AI-powered features (see below).
@@ -51,7 +52,7 @@ The global document tools (accessible via the three dots `...` at the top of the
 - This submenu includes "preset prompts" optimized for teleprompting / cue-based talks. There is also a custom prompt where you can enter any transformation that will apply to the selected text.
 
 ## OtO AI Configuration
-In the `Settings` panel under the "General" section, you can modify the type of AI model you want to use.
+In the `⚙ Settings` panel under the "General" section, you can modify the type of AI model you want to use.
 
 ![ai-settings](/ai-settings.jpg)
 

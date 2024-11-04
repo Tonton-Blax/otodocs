@@ -12,18 +12,14 @@ When you open OtO, you will see this registration module:
 
 - If you already have a license, fill in the necessary fields and click *"Register."* Note that your serial number is tied to a security key present on your computer. You can reinstall OtO on another computer if necessary, but you should **not** use the same license on multiple computers simultaneously. Doing so may result in your license being permanently deactivated.
 
-- The demo mode gives you access to all OtO features, including the "Network" version. It is not time-limited, but it will display a watermark on the prompter screen.
+- You can obtain a free or paid license by clicking the "Buy License" button or visiting [https://oto.software#licensing](https://oto.software#licensing).
 
-- You can obtain a license by clicking the "Buy License" button or visiting [https://oto.software#licensing](https://oto.software#licensing).
+## OtO Demo
 
-## OtO Versions
+The free demo versions allows you to test all features from every OtO flavour. It's unlimited in time and only displays a watermark in the Prompter Panel region as well as in the external window. It will also triggers a gentle popup reminder to support OtO from time to time.
 
-OtO comes in three flavors, and a full-featured demo version:
-
-- The free demo versions allows you to test all features from every OtO flavour. It's unlimited in time and only displays a watermark in the Prompter Panel region as well as in the external window
-
-The **Freelance**, **Live** and **Network** editions unlock the following features:
-<div id="oto-features">
+<!-- The **Freelance**, **Live** and **Network** editions unlock the following features: -->
+<!-- <div id="oto-features">
 
 |Freelance                                                             |Live                                                                  |Network                                                               |
 |----------------------------------------------------------------------|----------------------------------------------------------------------|----------------------------------------------------------------------|
@@ -37,14 +33,18 @@ The **Freelance**, **Live** and **Network** editions unlock the following featur
 |~~Fail-Safe network pairing~~                                         |~~Fail-Safe network pairing~~                                         |Fail-Safe network pairing                                             |
 |~~Network based collaborative workflow~~                              |~~Network based collaborative workflow~~                              |Network based collaborative workflow                                  |
 |~~SMPTE TimeCode markers throught NTP sync~~                          |~~SMPTE TimeCode markers throught NTP sync~~                          |SMPTE TimeCode markers throught NTP sync                              |
-</div>
+</div> -->
 
 ## Changing Your License
 
 You can deactivate your current license at any time to activate a new one. Here's how:
-- Go to the `Help` menu and click `Disable your OtO license`.
+- Go to the ***Help*** menu and click ***Disable your OtO license***.
 - Restart the application to display the registration module again.
+
+## Moving to another computer
+You can move your license to another computer at any time.
+Just follow the steps above to deactive your license first on the first computer, and reactivate it after installing OtO on the other computer.
 
 ## Updating
 
-To update, just click the *Help* Menu then *Check For updates*, and install the suggested update if one is available
+To update, just click the ***Help*** Menu then ***Check For updates***, and install the suggested update if one is available

@@ -18,7 +18,7 @@ This offline version may not be 100% up to date. Get the latest version at [http
 - Provides access to the [prompter screen](/docs/oto-basics/prompting), and to [marker options] (/docs/oto-basics/editing) and editing features
     &nbsp;
     :::admonition type=tip
-    If the _Show Tooltips_ option is enabled in Settings Panel (`Options` Menu then `Settings`, or <Number n="8" />), you can hover your mouse over any button in the interface to display a tooltip that will remind you of the button's associated function.
+    If the _Show Tooltips_ option is enabled in Settings Panel (`Options` Menu then `⚙ Settings`, or <Number n="8" />), you can hover your mouse over any button in the interface to display a tooltip that will remind you of the button's associated function.
     :::
 !!!
 
@@ -32,7 +32,7 @@ This offline version may not be 100% up to date. Get the latest version at [http
 !!!
 
 !!!step title="Mini Editor"|orientation="vertical"
-- The [mini editor](/docs/oto-basics/editing#mini-editor) allows you to view and scroll the prompting text without scrolling the prompter screen, and even edit it.
+- The [mini editor](/docs/oto-basics/editing#mini-editor) allows you to view and scroll the prompting text without scrolling the prompter screen, and even edit it. You can also grab the panels handles to resize them. 
 !!!
 
 !!!step title="Markers module"|orientation="vertical"
@@ -48,7 +48,9 @@ This offline version may not be 100% up to date. Get the latest version at [http
 - The ["Jump" and "Sync"](/docs/oto-basics/rundown#jump-and-sync) buttons allow you to respectively find a word or a selected portion of text from the main editing module to the mini-editor and vice versa.
 !!!
 !!!step title="Settings"|orientation="vertical"
-- Settings Panel (`Options` Menu then `Settings`, or <Number n="8" />) panel
+- Settings Panel (***Options*** Menu then **Settings**, or <Number n="8" />) panel.
+
+To distinguish between the Menus (in the top bar of your computer) and the Settings (the <Icon d="settings"/> gear icon button on the top right angle of OtO's user interface), this documentation will consistently refer to ***Menu*** and `⚙ Settings`.
 !!!
 :::
 

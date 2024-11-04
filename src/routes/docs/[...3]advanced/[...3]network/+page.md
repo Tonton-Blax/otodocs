@@ -4,7 +4,11 @@ title: Network Mode
 
 # {$frontmatter.title}
 
-If you have the [**"Network Edition"** license](/docs/oto-basics/licensing#oto-versions), you gain access to OtO's network features, allowing you to synchronize multiple computers. This provides added security during your session, as you can seamlessly switch to another machine if one fails.
+OtO allows you to synchronize multiple computers. This provides added security during your session, as you can seamlessly switch to another machine if one fails.
+
+You may also connect the [OtOView](#otoview) app to OtO, allowing you to display the teleprompter screen over the network, either wired or wirelessly, on a smartphone or tablet.
+
+You can also set up, for example, a multi-screen display system (for a speaker/lectern/presidential prompter, for instance) using two OtO computers dedicated to display on these screens. Simply launch OtO, connect them to the 'master,' then activate the prompter window and switch it to full screen. Even if these computers only have a single display, being able to set the prompter window to full screen allows you to transform an OtO client into a remote prompter display!
 
 Unlike other presentation or teleprompter software, OtO operates in a peer-to-peer (P2P) mode rather than a client-server setup. All computers are interconnected directly, without relying on a server.
 
@@ -22,6 +26,7 @@ Unlike other presentation or teleprompter software, OtO operates in a peer-to-pe
 - ***Display***: when prompting in network mode, you'll either need:
     - a video switch, HDMI, or other types of switches to toggle the teleprompter display when switching from one computer to another. Here are a few examples of robust and professional-grade HDMI and SDI switches (Blackmagic Design ATEM Mini Pro, Roland V-1HD HD Video Switcher, AJA KUMO 1616 SDI Router or Decimator Design DMON-QUAD for instance)
     - or a connected android display with [OtOView](#otoview) installed if you want to go wireless
+    - One or more other connected OtO computers acting as standalone displays by setting their prompter external window in fullscreen (AIO PCs are quite good candidates for this job)
 
 
 ## Master and Leading Computers
@@ -51,7 +56,7 @@ You can choose at any time which computer will trigger these actions by clicking
 Activating network mode is simple but must ***imperatively*** be done **in the correct order**:
 
 1. Ensure all computers are connected to the same network.
-2. In the network settings ( <Icon d="settings"/> `Settings` → `Network`), activate the network option (**"Enable OtO Network"**), and note the displayed IP address.
+2. In the network settings ( <Icon d="settings"/> `⚙ Settings` → `Network`), activate the network option (**"Enable OtO Network"**), and note the displayed IP address.
 3. If this is the main (master) computer, check the option **"Set this computer as OtO Network Master"**; if it's a client, leave this unchecked.
 4. For client computers, enter the master computer's IP address in the **OtO Master URL** field.
 5. Save your changes. Your documents are now synchronized!.
@@ -85,7 +90,7 @@ To access the network status dropdown, click the <Icon d="network" stroke="none"
   
 ## OtOView
 
-OtOView is a mobile app developed specifically for OtO. Simple to use, it allows you to connect a tablet or smartphone (or even several devices!) to an OtO "master" computer that controls the scrolling of the text. This enables two main use cases:
+OtOView is an android mobile app developed specifically for OtO. Simple to use, it allows you to connect a tablet or smartphone (or even several devices!) to an OtO "master" computer that controls the scrolling of the text. This enables two main use cases:
 
 1. Allows a speaker with a tablet or smartphone to move freely on stage or in a studio without having to rely solely on a camera prompter or speaker prompter.
 2. Use a tablet as a wireless camera prompter screen.

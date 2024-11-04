@@ -6,7 +6,7 @@ title: Overlays
 
 ## Time Bar
 
-When this option is enabled (Menu -> `Show timer` or `Settings` -> `Markers and Timers` -> `Timers` -> "Show Timer"), an overlay bar will appear at the top of the Prompter Editor <Number n=2 />. This **time bar** contains:
+When this option is enabled (Menu -> `Show timer` or `⚙ Settings` -> `Markers and Timers` -> `Timers` -> "Show Timer"), an overlay bar will appear at the top of the Prompter Editor <Number n=2 />. This **time bar** contains:
 
 - A timer in the format `HH:MM:SS:ii`
 - In prompter mode only: a countdown indicating the time remaining until the next Action Marker
@@ -15,7 +15,7 @@ When this option is enabled (Menu -> `Show timer` or `Settings` -> `Markers and 
 
 :::admonition type=info
 When the option is enabled, the timer is also visible on the prompter screen at the bottom of the window (the top area is reserved for document information).  
-To show or hide the Action Markers countdown, go to `Settings` -> `Markers and Timers` -> `Show markers on external display`, and enable **"Show Time to Next Action Marker"**.
+To show or hide the Action Markers countdown, go to `⚙ Settings` -> `Markers and Timers` -> `Show markers on external display`, and enable **"Show Time to Next Action Marker"**.
 :::
 
 ### Action Marker Countdown
@@ -35,6 +35,6 @@ For the **prompter screen only**, another horizontal overlay bar, the *title bar
 1. The document number, the total number of documents, and the title of the current document.
 2. A progress indicator in percentage, relative to the current document, along with a global progress indicator.
 
-You can choose to display either (or none) of these elements by going to `Settings` -> `Markers and Timers` -> `Prompter Screen Overlay Metadata`.
+You can choose to display either (or none) of these elements by going to `⚙ Settings` -> `Markers and Timers` -> `Prompter Screen Overlay Metadata`.
 
 ![timers](/overlay-title.jpg)

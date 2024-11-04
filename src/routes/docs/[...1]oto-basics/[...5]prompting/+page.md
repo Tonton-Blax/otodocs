@@ -8,8 +8,17 @@ description: Get up and running with OtO in just a few minutes.
 Switching to prompter mode allows you to scroll the text at the speaker's pace, using either OtO's built-in tools or dedicated external devices.
 
 ## Prompting Mode
-- First make sure an actual monitor (or a display matrix switch) is plugged to your computer as a secondary display.
-Then click the <Icon d="toggleScreen" /> button to display a full screen prompter window on this external display. If no additional screen is plugged, the prompter window will be displayed as a floating window on the primary screen.
+- Click the <Icon d="toggleScreen" /> button to display a full screen prompter window on this external display.
+With an actual secondary monitor attached (or a display matrix switch), this will be the prompter screen (in a conventional camera teleprompting setup for instance, this would be the screen behind or above the glass).<br><br>
+Note that if no additional screen is plugged, the prompter window will be displayed as a floating window on the primary screen.
+You could set this window to fullscreen mode, and set up, for instance, a remote multi-screen display system (see the [network section](/docs/advanced/network))
+
+:::admonition type=tip
+To toggle between *fullscreen* mode / *floating window* mode, go to the **Options** Menu then click **Toggle display fullscreen**
+:::
+
+
+
 - By clicking the <Icon d="togglePrompter" fill="rgb(255,83,26)" /> button (or with the shortchut `CTRL+P` or `⌘+P` on mac), you will switch to [prompter mode](/docs/oto-basics/prompting), the toolbar will change its appearance, and you will no longer be able to edit the text from the _Prompter Editor_ Panel <Number n="2" />, you can still do so from the _mini-editor_ though.
 Now, your task is to scroll the text at the speaker's pace!
 ![Prompting toolbar](/toolbar-prompting.jpg)
@@ -25,16 +34,16 @@ Although these tips are primarily aimed at operators scrolling text for a speake
 - To adjust the scrolling / prompting speed, you can drag the blue slider next to the <Icon d="togglePrompter" fill="rgb(255,83,26)" /> button. You will scroll backwards if you drag it below Zero and upwards otherwise.
   
 - You can also click on the <Number n="2"/> _Prompter Editor_ panel to get it focused and press multiple times `UP↑` (faster) and `DOWN↓` arrows (slower) of your keyboard
-- But don't stop there, OtO is designed to be used with multiple physical controllers. If you're the lucky owner of a Contour™ Shuttle Xpress or Shuttle Pro, you can configure it by going to Controllers Settings Panel (`Options` Menu then `Settings`, or <Number n="8" />)
+- But don't stop there, OtO is designed to be used with multiple physical controllers. If you're the lucky owner of a Contour™ Shuttle Xpress or Shuttle Pro, you can configure it by going to Controllers Settings Panel (`Options` Menu then `⚙ Settings`, or <Number n="8" />)
 - To exit prompting Mode and go back to editing mode, just click again on the <Icon d="togglePrompter" fill="rgb(255,83,26)" /> or with the shortchut `CTRL+P` or `⌘+P` on mac)
-- Clicking on <Icon d="margins" /> in the toolbar will allow you to change the left and right margins of the document (to adapt to any safe margins of the extenral display for instance) as well as the global line height 
+- Clicking on <Icon d="margins" /> in the toolbar will allow you to change the left and right margins of the documents inside the current OtO projects (to adapt to any safe margins of the extenral display for instance) as well as the global line height. It's an important feature detailed in the [editing](/docs/oto-basics/editing#setting-margins-and-offsets) section.
 Still in the settings window, you can also configure and use any MIDI device!
 
 
 ## Configuring a Scrolling Device
-OtO enables text scrolling using your keyboard, a Contour™ Shuttle Xpress or Shuttle Pro (recommended), or any compatible MIDI device. 
+OtO enables text scrolling using your keyboard, a [Contour™ Shuttle Xpress](https://contourdesign.store/) or Shuttle Pro (recommended), or any compatible MIDI device. 
 
-To configure these devices, go to the settings panel (`Options` → `Settings` → `Controllers`) or click on <Number n="8"/>.
+To configure these devices, go to the settings panel (`Options` → `⚙ Settings` → `Controllers`) or click on <Number n="8"/>.
 
 Within the three tabs—"Keyboard", "Shuttle", and "Midi"—you can adjust key/button assignments for each device. 
 
@@ -57,7 +66,7 @@ Other devices like the Contour™ Shuttle Xpress or Shuttle Pro, or the PitchBen
 
 ## Adjusting Speed Settings
 
-You can fine-tune the acceleration curve of your controller by going to `Settings` → `Speed`. This allows you to, for example, have more precision at slower speeds (and less at higher speeds).
+You can fine-tune the acceleration curve of your controller by going to `⚙ Settings` → `Speed`. This allows you to, for example, have more precision at slower speeds (and less at higher speeds).
 
 By default, four pre-configured speed settings are provided, which cover most common needs. You can view and take inspiration from these preset curves to create your own by clicking the <TextIcon text="add" color="white" icon="add" /> button. To delete a custom curve, click the <TextIcon text="Delete" color="#F05252" icon="trash" /> button (note that factory presets cannot be deleted).
 

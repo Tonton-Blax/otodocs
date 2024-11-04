@@ -25,8 +25,33 @@ function cleanSlug(relativePath) {
   );
 }
 
+function stripCustomComponents(text) {
+  return text
+    // Remove Svelte/custom components with their content
+    .replace(/<(Icon|Number|TextIcon|Round|SvgSchemas|Q)[^>]*>[^<]*<\/\1>/g, '') // Components with content
+    .replace(/<(Icon|Number|TextIcon|Round|SvgSchemas|Q)[^>]*\/?>/g, '') // Self-closing components
+    // Remove any HTML comments
+    .replace(/<!--[\s\S]*?-->/g, '')
+    // Clean up extra whitespace
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 function stripHtml(html) {
-  return html.replace(/<[^>]*>/g, "");
+  let text = html
+    // Remove any HTML tags
+    .replace(/<[^>]+>/g, '')
+    // Replace HTML entities
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&amp;/g, '&')
+    .replace(/&nbsp;/g, ' ')
+    // Clean up extra whitespace
+    .replace(/\s+/g, ' ')
+    .trim();
+  
+  return text;
 }
 
 function slugify(text) {
@@ -140,19 +165,25 @@ export default function markdownJsonPlugin() {
             markdownContent,
             data
           );
-          const cleanedContent = stripCustomSyntax(processedContent);
+          // First strip custom components, then custom syntax, then convert to HTML
+          const strippedComponents = stripCustomComponents(processedContent);
+          const cleanedContent = stripCustomSyntax(strippedComponents);
           const htmlContent = md.render(cleanedContent);
           const plainTextContent = stripHtml(htmlContent).trim();
           const relativePath = path.relative(docsDir, file);
           const baseSlug = "docs" + cleanSlug(relativePath);
 
           const mainPage = {
-            title: data.title || path.basename(file, ".md"),
+            title: stripCustomComponents(data.title || path.basename(file, ".md")),
             content: plainTextContent,
             slug: baseSlug,
           };
 
-          const sections = extractSections(processedContent, baseSlug);
+          const sections = extractSections(processedContent, baseSlug).map(section => ({
+            ...section,
+            title: stripCustomComponents(section.title),
+            content: stripCustomComponents(section.content)
+          }));
 
           return [mainPage, ...sections];
         })
