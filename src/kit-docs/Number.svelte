@@ -11,7 +11,11 @@
   $: isWhite = n.length > 1;
 </script>
 
-<span use:tooltip={{ src: `/numbers/${n}.jpg`, sizes, n }} class:isWhite>
+<span
+  use:tooltip={{ src: `/numbers/${n}.jpg`, sizes, n }}
+  class:isWhite
+  class:cursor-zoom-in={[2, 3, 4, 5, 6, 8].includes(parseInt(n))}
+>
   {n}
 </span>
 
@@ -30,7 +34,6 @@
     background-color: #ef4444;
     border: 1px white solid;
     vertical-align: 0.125em;
-    cursor: zoom-in;
   }
 
   span.isWhite {

@@ -24,31 +24,31 @@ This offline version may not be 100% up to date. Get the latest version at [http
 
 
 !!!step title="Edition"|orientation="vertical"
-- [Editing window](/docs/oto-basics/editing)
+[Editing window](/docs/oto-basics/editing)
 !!!
 
 !!!step title="Rundown and documents"|orientation="vertical"
-- [Rundown](/docs/oto-basics/rundown) management window (scripts list management)
+[Rundown](/docs/oto-basics/rundown) management window (scripts list management)
 !!!
 
 !!!step title="Mini Editor"|orientation="vertical"
-- The [mini editor](/docs/oto-basics/editing#mini-editor) allows you to view and scroll the prompting text without scrolling the prompter screen, and even edit it. You can also grab the panels handles to resize them. 
+The [mini editor](/docs/oto-basics/editing#mini-editor) allows you to view and scroll the prompting text without scrolling the prompter screen, and even edit it. You can also grab the panels handles to resize them. 
 !!!
 
 !!!step title="Markers module"|orientation="vertical"
-- The [marker module](/docs/markers/standard-markers) allows you to navigate between markers (similar to bookmarks within the text) and trigger advanced actions via actionMarkers.
+The [marker module](/docs/markers/standard-markers) allows you to navigate between markers (similar to bookmarks within the text) and trigger advanced actions via actionMarkers.
 !!!
 
 
 !!!step title="Search module"|orientation="vertical"
-- [Search and replace](/docs/oto-basics/editing#mini-editor) module
+[Search and replace](/docs/oto-basics/editing#mini-editor) module
 !!!
 
 !!!step title="Jump / Sync"|orientation="vertical"
-- The ["Jump" and "Sync"](/docs/oto-basics/rundown#jump-and-sync) buttons allow you to respectively find a word or a selected portion of text from the main editing module to the mini-editor and vice versa.
+The ["Jump" and "Sync"](/docs/oto-basics/rundown#jump-and-sync) buttons allow you to respectively find a word or a selected portion of text from the main editing module to the mini-editor and vice versa.
 !!!
 !!!step title="Settings"|orientation="vertical"
-- Settings Panel (***Options*** Menu then **Settings**, or <Number n="8" />) panel.
+Settings Panel (***Options*** Menu then **Settings**, or <Number n="8" />) panel.
 
 To distinguish between the Menus (in the top bar of your computer) and the Settings (the <Icon d="settings"/> gear icon button on the top right angle of OtO's user interface), this documentation will consistently refer to ***Menu*** and `⚙ Settings`.
 !!!
