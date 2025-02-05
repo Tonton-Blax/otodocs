@@ -32,12 +32,15 @@
 
   $: ({ meta, sidebar } = data);
   $: category = $activeCategory ? `${$activeCategory}: ` : "";
-  $: title = meta ? `${category}${meta.title} | KitDocs` : null;
+  $: title = meta ? `${category}${meta.title} | Oto Documentation` : null;
   $: description = meta?.description;
 
   /** @type {import('@svelteness/kit-docs').NavbarConfig} */
   const navbar = {
-    links: [{ title: "Documentation", slug: "/docs", match: /\/docs/ }],
+    links: [
+      { title: "Oto Website", slug: "https://oto.software", match: /\/docs/ },
+      { title: "Documentation", slug: "/docs", match: /\/docs/ },
+    ],
   };
 
   const { activeCategory } = createSidebarContext(sidebar);
@@ -118,7 +121,11 @@
     {/if}
 
     <div class="logo" slot="navbar-left">
-      <Button href="/">
+      <Button
+        href={$page.url.hostname.includes("documentation.oto")
+          ? "https://oto.software"
+          : "/"}
+      >
         {@html SvelteLogo}
       </Button>
     </div>

@@ -5,7 +5,6 @@
     export let url;
     export let options = {
         width: 960,
-        height: 440,
         zoomWidth: 500,
         img: "1.jpg",
         offset: { vertical: 0, horizontal: 10 },
@@ -20,3 +19,9 @@
 </script>
 
 <div class="imageContainer" bind:this={container}></div>
+
+<style>
+    .imageContainer :global(img) {
+        height: auto !important;
+    }
+</style>
