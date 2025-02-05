@@ -8,7 +8,7 @@
 
   import { page } from "$app/stores";
 
-  import SvelteLogo from "$img/logo-horiz-2.svg?raw";
+  import SvelteLogo from "$img/logo-horiz-3.svg?raw";
 
   import {
     Button,
