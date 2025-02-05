@@ -34,9 +34,9 @@ There are three types of markers:
 
 Standard and presenter markers serve the same bookmarking purpose, just with different colors to help you see things more clearly. Additionally, presenter markers can be configured not to appear on the external prompter screen (to help you as the operator, without disrupting the speaker’s readability).
 As for ActionMarkers, they are a powerful OtO feature explained in more detail [here](./action-markers).
-You can change the marker type (toggle between Standard / Presenter. Action Markers require a [specfic syntax](./action-markers)) by first selecting it with a double-click in either editor, then clicking the button <Icon d="toggleMarkerType" />
-![Marker Type Toggle](/marker-toggle.jpg)
-Finally, you can configure which marker types should appear on the prompter screen by going to `Settings -> Markers and timers` then, select "Show markers on external display"
+You can change the marker type (toggle between Standard / Presenter. Action Markers require a [specfic syntax](/docs/markers/action-markers#creating-an-action-marker) by first selecting it with a double-click in either editor, then clicking the button <Icon d="toggleMarkerType" />
+![Marker Type Toggle](/marker-toggle.webp)
+Finally, you can configure which marker types should appear on the prompter screen by going to `⚙ Settings` -> `Markers and timers` then, select "Show markers on external display"
 
 ## Navigating Between Markers
 
@@ -53,7 +53,7 @@ To find the same text across editors, select one or more words and click the but
 
 To move to the next or previous marker, you can either:
 - Click the buttons <Icon d="previousMarker" /> or <Icon d="nextMarker" />
-- Use the shortcut on your physical controller (you can change the assignments in `Settings -> Controllers` then bind the input for the "Next" and "Previous" markers)
+- Use the shortcut on your physical controller (you can change the assignments in `⚙ Settings` -> `Controllers` then bind the input for the "Next" and "Previous" markers)
 - The default keyboard shortcuts are `CTRL+PAGEDOWN` and `CTRL+PAGEUP`
 
 - Last but not least, when navigating between markers, you can choose either to scroll the text so that the marker lands at the bottom of the screen—giving you, for example, time to anticipate upcoming Action Markers—or to scroll the text so that the marker aligns precisely with the cue indicator ▶. If desired, you can add an offset of +/- 150 pixels to fine-tune this positioning. Go to `⚙ Settings` → `Markers and Timers` → `Scroll Offset ▶ cue indicator` to enable or disable this behavior and set the aforementioned offset.

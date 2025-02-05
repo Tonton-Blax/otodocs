@@ -1,7 +1,8 @@
 ---
 title: Action Markers
 ---
-# {$frontmatter.title}  
+
+# {$frontmatter.title}
 
 One of OtO’s missions is to restore the speaker’s role as the conductor. Thanks to Action Markers, OtO can orchestrate all events around the text, from advancing PowerPoint slides to playing jingles, launching videos, and controlling lights
 
@@ -9,7 +10,7 @@ One of OtO’s missions is to restore the speaker’s role as the conductor. Tha
 
 ActionMarkers are just like other markers, except they trigger events (like passing slides, playing videos or sounds etc.) when the text scrolls and the marker passes in front of the **▶** cue indicator.
 
-ActionMarkers are first created as standard markers, meaning you need to select a portion of text and then either click <Icon d="addMarker"/> the button or use the shortcut `CTRL + M` or  `⌘ + M`. Afterward, to "convert" them into Action Markers, you must use a specific syntax, as explained below.
+ActionMarkers are first created as standard markers, meaning you need to select a portion of text and then either click <Icon d="addMarker"/> the button or use the shortcut `CTRL + M` or `⌘ + M`. Afterward, to "convert" them into Action Markers, you must use a specific syntax, as explained below.
 
 This syntax determines the type of action the marker will trigger, allowing you to control external events, such as slides, sounds, or videos, during your presentation.
 
@@ -22,23 +23,23 @@ The trigger is signaled by a slight flash lasting about one second.
 You may still manually trigger action markers on certain conditions, [see below to know how](#manual-triggering)
 :::
 
-:::admonition type=info 
-***MARKER OFFSET SHIFT***
+:::admonition type=info
+**_MARKER OFFSET SHIFT_**
 
 The actionMarkers will be triggered as the text scrolls and the marker passes in front of the ▶ cue indicator.
-You can fine-tune the vertical offset (relative to the ▶ cue indicator position) in the **margins** dropdown. Click  <Icon d="margins" /> icon in the toolbar and enter a positive or negative value in the "Action Marker vertical Offset in pixels"
- ![margins](/margins.jpg)
+You can fine-tune the vertical offset (relative to the ▶ cue indicator position) in the **margins** dropdown. Click <Icon d="margins" /> icon in the toolbar and enter a positive or negative value in the "Action Marker vertical Offset in pixels"
+![margins](/margins.jpg)
 :::
 
 ## Time to next ActionMarker
 
 When the `Show timer` option is enabled (**Option** Menu → then **Show Timer**), the remaining time before the next Action Marker will be displayed as a countdown and will adjust according to the scrolling speed. This allows you—and potentially your team—to anticipate the upcoming event. It can be a valuable tool for cue operators, speakers, and stage managers!
 
-You may also display (or hide) this countdown on the *prompter window* or external screen.
-To do so, go to `⚙ Settings` -> `Markers and Timers` -> then `Show markers on external display`, and enable *"Show Time to Next Action Marker"*.
+You may also display (or hide) this countdown on the _prompter window_ or external screen.
+To do so, go to `⚙ Settings` -> `Markers and Timers` -> then `Show markers on external display`, and enable _"Show Time to Next Action Marker"_.
 See the [Overlay chapter](/docs/advanced/overlays) to get more detailed informations.
 
-![show-timer](/show-timer.jpg)
+![show-timer](/show-timer.webp)
 
 :::admonition type=warning
 Be aware that the countdown to the next marker will only be displayed when it is less than 150 seconds away.
@@ -51,6 +52,7 @@ Action Markers can trigger several types of events, and we will continue to expa
 1. **MIDI**  
    MIDI actions allow you to trigger MIDI events such as noteOn, noteOff, or a controller event (CC). This enables communication with a wide variety of devices for coordinating sound and lighting. Refer to the documentation of the equipment or software you wish to control to understand how it responds to these types of instructions.  
    Some well-known sound and lighting equipment for large events that can be controlled via MIDI include:
+
    - **Pioneer DJ Mixers and Controllers** for automated sound effects and transitions
    - **Martin Professional Lighting Controllers** for synchronized lighting effects
    - **Ableton Live** for triggering audio and visual cues during live performances
@@ -72,20 +74,21 @@ Creating an action marker differs slightly from standard markers and requires sp
 First you need to create a [standard Marker](/docs/markers/standard-markers#creating-a-marker), then you should enter a special [description](/docs/markers/standard-markers#renaming-the-marker-description)
 
 The syntax to enter as a description for creating an actionMarker can be defined as follows:
-`//group:command(option)`
+`/group:command(option)`
 
 Here’s a breakdown of this structure:
 
-- `//` Every actionMarker starts with two slashes.
+- `/` Every actionMarker starts with a slash.
 - `group` – Refers to the type of command, such as controlling slides, playing sounds, or triggering other events (see below for a list of compatible groups and commands)
 - `command` – Specifies the exact action to be executed within the group, such as advancing to a particular slide or starting a video.
 - `(option)` – Optional parameters between parenthesis that refine the command, such as slide numbers, sound files, or lighting settings.
 
-***Example:***<br>
-To trigger the midi note E2 with a velocity of 120 (assuming you've set up a working midi device), the command would be:<br> `//midi:e2(120)`
-![maker-action-renaming](/marker-action-rename.jpg)
+**_Example:_**<br>
+To trigger the midi note E2 with a velocity of 120 (assuming you've set up a working midi device), the command would be:<br> `/midi:e2(120)`
+![maker-action-renaming](/marker-action-rename.webp)
 
 In this case:
+
 - `midi` is the group.
 - `e2` is the command to trigger the E2 note
 - `(120)` is the option, specifying the velocity level
@@ -96,51 +99,50 @@ This flexible syntax allows OtO to manage a wide range of actions based on the n
 
 Here is the list of command types and commands natively supported by OtO and their syntax.
 
-|  TYPE   | COMMAND     | EXAMPLES                                                                      |
-|-------- | ----------- | ----------------------------------------------------------------------------- |
-|  midi   | [note]      | `//midi:e2` Will trigger note e2 with default velocity (127)<br>`//midi:c#4(0)` will trigger note C#4 with a velocity of 0 (which pratically means a noteOff) |
-|  midi   | [cc number] | `//midi:cc11` Will trigger midi CC11 with default value (127)<br>`//midi:cc2(64)` will trigger a CC2 event with a value of 64 |
-|  ppt    | [slide]     | `//ppt:3` Will go to slide 3                                                  |
-|  ppt    | next        | `//ppt:next` (next slide)                                                     |
-|  ppt    | previous    | `//ppt:previous` (previous slide)                                             |
-|  ppt    | first       | `//ppt:first`                                                                 |
-|  ppt    | last        | `//ppt:last`                                                                  |
-|  timer  | [HHMMSS]    | `//timer:002004` Will set the timer to 00:20:04 )                             |
-|  timer  | reset       | `//timer:reset`                                                               |
-|  timer  | pause       | `//timer:pause`                                                               |
-|  note   | [any]       | `//note:welcome` Does nothing specific, for testing and demos purposes        |
-
-
+| TYPE  | COMMAND     | EXAMPLES                                                                                                                                                    |
+| ----- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| midi  | [note]      | `/midi:e2` Will trigger note e2 with default velocity (127)<br>`/midi:c#4(0)` will trigger note C#4 with a velocity of 0 (which pratically means a noteOff) |
+| midi  | [cc number] | `/midi:cc11` Will trigger midi CC11 with default value (127)<br>`/midi:cc2(64)` will trigger a CC2 event with a value of 64                                 |
+| ppt   | [slide]     | `/ppt:3` Will go to slide 3                                                                                                                                 |
+| ppt   | next        | `/ppt:next` (next slide)                                                                                                                                    |
+| ppt   | previous    | `/ppt:previous` (previous slide)                                                                                                                            |
+| ppt   | first       | `/ppt:first`                                                                                                                                                |
+| ppt   | last        | `/ppt:last`                                                                                                                                                 |
+| timer | [HHMMSS]    | `/timer:002004` Will set the timer to 00:20:04 )                                                                                                            |
+| timer | reset       | `/timer:reset`                                                                                                                                              |
+| timer | pause       | `/timer:pause`                                                                                                                                              |
+| note  | [any]       | `/note:welcome` Does nothing specific, for testing and demos purposes                                                                                       |
 
 ## Group actions syntax
 
 You can group two actionMarkers with the following syntax:
-`//group:command|group2:command2`
+`/group:command|group2:command2`
 
 This allows you to trigger multiple actions simultaneously. Here's how it works:
 
-- `//` – Starts the actionMarker.
+- `/` – Starts the actionMarker.
 - `group:command` The first group and its associated command.
-- `|` The "pipe" symbol separates different actionMarkers, allowing multiple commands to be grouped together (note that you *DO NOT* start the second actionMarker with another // )
+- `|` The "pipe" symbol separates different actionMarkers, allowing multiple commands to be grouped together (note that you _DO NOT_ start the second actionMarker with another / )
 - `group2:command2` – The second group and its associated command (it can be any valid group:command couple, including the same couple than the first actionMarker)
 
-***Example***:
+**_Example_**:
 If you want to change to next slide and play a sound simultaneously, the actionMarker would look like this:
-`//ppt:next|midi:e2`
-
+`/ppt:next|midi:e2`
 
 ## Manual triggering
+
 There are 3 different ways of manually triggering an action Marker
+
 1. You can disable the **"Trigger Marker Action on Scroll"** option in:<br> `⚙ Settings` -> `Markers and Timers` -> `Advanced Settings for Action Markers`.<br>
 
 This way, markers will no longer activate on scroll but instead will be triggered by clicking the target button next to the marker name, which will change to a "play" button in this mode (double-click on it to actually trigger the marker).
 
 This mode can be very useful for rehearsals, for example, where you may not want to trigger events at every turn.
 
-![marker-play](/marker-play.jpg)
+![marker-play](/marker-play-noscroll.webp)
 
-2. Also, whatever the mode you're in (*prompting mode* or not), you can always trigger any action marker by **right clicking** the marker's name and then select
-` Trigge Marker `
-![manual trigger](/markers-right-click.jpg)
+2. Also, whatever the mode you're in (_prompting mode_ or not), you can always trigger any action marker by **right clicking** the marker's name and then select
+   `Trigger Marker`
+   ![manual trigger](/markers-right-click.jpg)
 
-3. Finally, you can trigger the **next** action Marker (from the current position perspective) with the keyboard shortcut  `CTRL+SHIFT+T` or `⌘+SHIFT+T` on mac
+3. Finally, you can trigger the **next** action Marker (from the current position perspective) with the keyboard shortcut `CTRL+SHIFT+T` or `⌘+SHIFT+T` on mac

@@ -7,7 +7,7 @@ title: Rundown Panel
 The Rundown panel displays a list of all open documents and offers a variety of features for each document individually or for all documents collectively. It serves as a sort of toolbar for document management.
 
 ## Rundown Panel overview
-![rundown](/rundown-detail.jpg)
+![rundown](/rundown-detail.webp)
 
 - You can select multiple documents  using the panel checkboxes The topmost checkbox selects all documents.
 - The <Number n="3F" /> `...` dots **at the end of each document line** open the  [_document tools_](#document-tools), a collection of helping features on a per-document basis
@@ -46,7 +46,7 @@ Please note that when [**Network Mode**](/docs/advanced/network) is active, the 
 ## Global Document Tools
 The global document tools (accessible via the three dots `...` at the top of the Rundown panel) allow you to perform actions across the entire document set:
 
-![document-tools](/rundown-global-tools.png)
+![document-tools](/rundown-global-tools.webp)
 - **Insert New**: Inserts a new document at the top of the list.
 - **Delete**: Removes all selected documents.
 - **Language Detection**: If the language is not correctly detected, you can manually select the language at the bottom of the same dropdown menu (see below).

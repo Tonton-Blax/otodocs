@@ -8,7 +8,7 @@ title: Licensing and updates
 
 When you open OtO, you will see this registration module:
 
-![registration](/registration.jpg)
+![registration](/registration.webp)
 
 - If you already have a license, fill in the necessary fields and click *"Register."* Note that your serial number is tied to a security key present on your computer. You can reinstall OtO on another computer if necessary, but you should **not** use the same license on multiple computers simultaneously. Doing so may result in your license being permanently deactivated.
 

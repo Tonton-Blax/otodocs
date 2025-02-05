@@ -30,7 +30,7 @@
   font-size: 16px;
   scroll-padding-top: 6rem;
 
-  --kd-font-family-sans: Inter VF, ui-sans-serif, system-ui, -apple-system,
+  --kd-font-family-sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
@@ -143,46 +143,44 @@ q:after {
 }
 
 q {
-  font-family: "IBM Plex Sans", sans-serif !important;
-  outline-offset: -1px;
   font-family: inherit;
   font-size: xx-large;
+  font-family: "IBM Plex Sans", sans-serif !important;
   position: relative;
   color: inherit;
-  display: inline-flex;
+  display:inline-flex;
+  outline-width: 1px;
+  border-radius:3px;
 }
 
-q[data-mark-type="marker"] {
-  outline: 1px dashed coral;
+q[data-mark-type=marker] {
+  outline: 1px dashed rgb(255,127,80);
 }
 
-q[data-mark-type="presenter"] {
-  outline: 1px dashed limegreen;
+q[data-mark-type=presenter] {
+  outline: 3px solid rgb(50,205,50);
 }
 
-q[data-mark-type="actionMarker"] {
-  outline: 2px ridge lightskyblue;
+q[data-mark-type=actionMarker] {
+  outline: 3px ridge rgb(135,206,250);
 }
 
-q[data-mark-type="marker"]:after {
-  background: coral;
+q[data-mark-type=marker]:after {
+  background: rgba(255,127,80, 0.75);
 }
 
-q[data-mark-type="presenter"]:after {
-  background: limegreen;
+q[data-mark-type=presenter]:after {
+  background: rgba(50,205,50, 0.75);
 }
 
-q[data-mark-type="actionMarker"]:after {
-  background: lightskyblue;
+q[data-mark-type=actionMarker]:after {
+  background: rgba(135,206,250, 0.75);
 }
 
-q[data-mark-type="actionMarker"]:after {
-  background: lightskyblue;
-}
 
 q:after {
   color: #fff;
-  font-size: xx-small;
+  font-size: 13px;
   content: attr(data-contenu);
   position: absolute;
   white-space: nowrap;
@@ -194,11 +192,14 @@ q:after {
   align-items: center;
   justify-content: left;
   padding: 10px;
-  bottom: 0px;
+  bottom: -2px;
+  left:-2px;
+  border-bottom-left-radius:6px;
+  border-top-right-radius:6px;
   max-width: fill-available;
-  overflow: hidden;
-  left: 0px;
+  overflow:hidden;
 }
+
 
 .q:empty:before {
   content: "\00a0";

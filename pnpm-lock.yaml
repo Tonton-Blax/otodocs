@@ -11,6 +11,9 @@ importers:
       '@svelte-put/clickoutside':
         specifier: ^3.0.2
         version: 3.0.2(svelte@4.2.19)
+      js-image-zoom:
+        specifier: ^0.7.0
+        version: 0.7.0
       markdown-it:
         specifier: ^14.1.0
         version: 14.1.0
@@ -501,6 +504,10 @@ packages:
 
   is-reference@3.0.2:
     resolution: {integrity: sha512-v3rht/LgVcsdZa3O2Nqs+NMowLOxeOm7Ay9+/ARQ2F+qEoANRcqrjAZKGN0v8ymUetZGgkp26LTnGT7H0Qo9Pg==}
+
+  js-image-zoom@0.7.0:
+    resolution: {integrity: sha512-csvn2FmRLjVz5O9AtXGRPKy0Khfcf5n2Vuyg1NyOVylcjzJ6IKN60JmZ/d5rVQvMya9V6tqAaCqj/c20PlUYpQ==}
+    engines: {node: '>=0.8.0'}
 
   js-yaml@3.14.1:
     resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==}
@@ -1102,6 +1109,8 @@ snapshots:
   is-reference@3.0.2:
     dependencies:
       '@types/estree': 1.0.6
+
+  js-image-zoom@0.7.0: {}
 
   js-yaml@3.14.1:
     dependencies:

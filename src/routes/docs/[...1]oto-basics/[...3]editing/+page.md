@@ -40,7 +40,7 @@ You may have already noticed that OtO provides two editing windows:  the _Prompt
 
 The top portion of the prompter editor displays exactly what the speaker sees on the external screen. This is the **"Prompter Safe View"**,
 However, since the font size in this view is often very large, editing text directly can be cumbersome. Additionally, it’s difficult to anticipate upcoming text or get a comprehensive overview of the content.
-This is where the _mini-editor_<Number n="2" /> comes in handy—it allows you to easily navigate through the document, preview the text ahead, and work on other sections without affecting the prompter screen.
+This is where the _mini-editor_<Number n="2" /> comes in handy—it's a preview panel which allows you to easily navigate through the document, get an overview of the text ahead, and work on other sections without affecting the prompter screen.
 
 :::admonition type=info
 When you scroll within the mini-editor, it does not move the prompter display, allowing the speaker to stay focused on their current section while the operator works elsewhere.
@@ -67,7 +67,7 @@ For a comprehensive overview of all the features available in this panel, refer 
 - The topmost checkbox allows you to select all documents at once.
 - The active document (the one currently scrolling in the _Prompter Editor_ is signaled with a red dot <Round/>).
 - Notice the current document progress indicator (not to be confused with the global progress indicator)
-![progress](/search.jpg)
+![progress](/search.webp)
 
 ## Markers <Number n="5"/>
 For a full understanding of OtO's powerful marker system, make sure to read the [main chapter](/docs/markers/standard-markers) and its sub-sections. However, here's a quick guide to get you started:

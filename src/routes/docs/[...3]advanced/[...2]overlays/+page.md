@@ -11,7 +11,7 @@ When this option is enabled (Menu -> `Show timer` or `⚙ Settings` -> `Markers 
 - A timer in the format `HH:MM:SS:ii`
 - In prompter mode only: a countdown indicating the time remaining until the next Action Marker
 
-![timers](/show-timer.jpg)
+![timers](/show-timer.webp)
 
 :::admonition type=info
 When the option is enabled, the timer is also visible on the prompter screen at the bottom of the window (the top area is reserved for document information).  

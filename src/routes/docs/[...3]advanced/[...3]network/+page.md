@@ -16,7 +16,7 @@ Unlike other presentation or teleprompter software, OtO operates in a peer-to-pe
 - **Increased Security**: The risk of failure is distributed across all connected machines, unlike in client-server architecture, where a server failure could take down the entire system.
 - **Ease of Use**: It’s simpler to set up and less cumbersome in terms of cabling and devices, speeding up the deployment process.
 
-![p2p-cs](/p2p-cs.png)
+![p2p-cs](/p2p-cs.webp)
 
 ## Required Hardware
 
@@ -65,7 +65,7 @@ Activating network mode is simple but must ***imperatively*** be done **in the c
 
 ## Network Status
 
-![Network Settings](/network-dd.png)
+![Network Settings](/network-dd.webp)
 <center>
 <small><em>Network DropDown Menu, master and client versions</em></small>
 </center>
@@ -96,7 +96,7 @@ OtOView is an android mobile app developed specifically for OtO. Simple to use, 
 2. Use a tablet as a wireless camera prompter screen.
 
 ***How to use OtOView:***
-- Set up an OtO computer as the network ["master"](##master-computer).
+- Set up an OtO computer as the network ["master"](#master-and-leading-computers).
 - Download the app from the Google PlayStore (it will soon be available for Apple tablets and smartphones).
 - Ensure the tablet or smartphone is connected to the same Wi-Fi network.
 - From OtO’s network menu <Icon d="network" stroke="none" fill="#ef4444"/> of the [*Master* computer](#master-and-leading-computers) click on the button <TextIcon icon="qrCode" text="QRCODE" />.

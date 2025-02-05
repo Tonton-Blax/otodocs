@@ -9,13 +9,13 @@ description: OtO at a glance, Registration, update
 
 This offline version may not be 100% up to date. Get the latest version at [https://help.oto.software](https://help.oto.software)
 
-![oto-interface](/interface.png)
+<ImageZoom url={'/interface.webp'} />
 
 :::steps
 
 !!!step title="Toolbar"|orientation="vertical"
 - Toggles Prompting / Editing Mode
-- Provides access to the [prompter screen](/docs/oto-basics/prompting), and to [marker options] (/docs/oto-basics/editing) and editing features
+- Provides access to the [prompter screen](/docs/oto-basics/prompting), and to [marker options](/docs/oto-basics/editing) and editing features
     &nbsp;
     :::admonition type=tip
     If the _Show Tooltips_ option is enabled in Settings Panel (`Options` Menu then `⚙ Settings`, or <Number n="8" />), you can hover your mouse over any button in the interface to display a tooltip that will remind you of the button's associated function.
@@ -45,7 +45,7 @@ The [marker module](/docs/markers/standard-markers) allows you to navigate betwe
 !!!
 
 !!!step title="Jump / Sync"|orientation="vertical"
-The ["Jump" and "Sync"](/docs/oto-basics/rundown#jump-and-sync) buttons allow you to respectively find a word or a selected portion of text from the main editing module to the mini-editor and vice versa.
+The ["Jump" and "Sync"](/docs/oto-basics/editing#mini-editor) buttons allow you to respectively find a word or a selected portion of text from the main editing module to the mini-editor and vice versa.
 !!!
 !!!step title="Settings"|orientation="vertical"
 Settings Panel (***Options*** Menu then **Settings**, or <Number n="8" />) panel.
