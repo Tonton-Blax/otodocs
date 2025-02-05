@@ -7,7 +7,7 @@ description: OtO at a glance, Registration, update
 
 {$frontmatter.description}
 
-This offline version may not be 100% up to date. Get the latest version at [https://help.oto.software](https://help.oto.software)
+This offline version may not be 100% up to date. Get the latest version at [https://documentation.oto.software](https://documentation.oto.software)
 
 <ImageZoom url={'/interface.webp'} />
 
