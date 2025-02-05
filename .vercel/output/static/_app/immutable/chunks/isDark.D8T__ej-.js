@@ -1,0 +1,1 @@
+import{r as c}from"./entry.BQ_95vq-.js";const u=c(!1,a=>{const e=new MutationObserver(function(n){n.forEach(function(r){var t,s;if(r.attributeName==="class"){const o=(s=(t=Array.from(r.target.classList)).includes)==null?void 0:s.call(t,"dark");a(o)}})});return e.observe(document.documentElement,{attributes:!0,childList:!1,subtree:!1}),()=>e.disconnect()});export{u as isDark};
