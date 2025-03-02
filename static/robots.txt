@@ -4,4 +4,4 @@ Disallow: /private/
 Disallow: /tmp/
 Disallow: /login/
 
-Sitemap: https://www.example.com/sitemap.xml
+Sitemap: https://documentation.oto.software/sitemap.xml
