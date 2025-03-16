@@ -9,10 +9,7 @@ const config = {
     paths: {
       //relative: true,
     },
-    prerender: {
-      entries: ['*'],
-      handleMissingId: 'warn',
-    },
+    
   },
 };
 
