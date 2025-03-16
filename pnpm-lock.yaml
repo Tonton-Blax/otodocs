@@ -11,6 +11,15 @@ importers:
       '@svelte-put/clickoutside':
         specifier: ^3.0.2
         version: 3.0.2(svelte@4.2.19)
+      '@sveltejs/adapter-vercel':
+        specifier: ^5.6.3
+        version: 5.6.3(@sveltejs/kit@2.7.2(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.9(@types/node@22.13.1)))(svelte@4.2.19)(vite@5.4.9(@types/node@22.13.1)))(rollup@4.24.0)
+      '@sveltejs/kit':
+        specifier: ^2.6.0
+        version: 2.7.2(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.9(@types/node@22.13.1)))(svelte@4.2.19)(vite@5.4.9(@types/node@22.13.1))
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^3.1.2
+        version: 3.1.2(svelte@4.2.19)(vite@5.4.9(@types/node@22.13.1))
       js-image-zoom:
         specifier: ^0.7.0
         version: 0.7.0
@@ -21,15 +30,6 @@ importers:
       '@iconify-json/ri':
         specifier: ^1.2.0
         version: 1.2.1
-      '@sveltejs/adapter-vercel':
-        specifier: ^5.6.3
-        version: 5.6.3(@sveltejs/kit@2.7.2(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.9(@types/node@22.13.1)))(svelte@4.2.19)(vite@5.4.9(@types/node@22.13.1)))(rollup@4.24.0)
-      '@sveltejs/kit':
-        specifier: ^2.6.0
-        version: 2.7.2(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.9(@types/node@22.13.1)))(svelte@4.2.19)(vite@5.4.9(@types/node@22.13.1))
-      '@sveltejs/vite-plugin-svelte':
-        specifier: ^3.1.2
-        version: 3.1.2(svelte@4.2.19)(vite@5.4.9(@types/node@22.13.1))
       '@svelteness/kit-docs':
         specifier: ^1.1.5
         version: 1.1.5(svelte@4.2.19)
