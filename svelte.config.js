@@ -6,6 +6,7 @@ const config = {
 
   kit: {
     adapter: adapter({fallback: 'index2.html'}),
+    outDir: 'build',
     paths: {
       //relative: true,
     },
