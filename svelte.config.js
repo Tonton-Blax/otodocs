@@ -5,15 +5,15 @@ const config = {
   extensions: ['.svelte', '.md'],
 
   kit: {
-    adapter: adapter({fallback: 'index2.html'}),
-    outDir: 'build',
+    //adapter: adapter({fallback: 'index2.html'}),
+    adapter: adapter({}),
     paths: {
       //relative: true,
     },
-    // prerender: {
-    //   entries: ['*'],
-    //   handleMissingId: 'warn',
-    // },
+    prerender: {
+      entries: ['*'],
+      handleMissingId: 'warn',
+    },
   },
 };
 
