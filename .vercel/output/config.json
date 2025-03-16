@@ -16,17 +16,6 @@
 			"status": 307
 		},
 		{
-			"src": "/pols/camera",
-			"dest": "/pols/camera/"
-		},
-		{
-			"src": "/pols/camera/",
-			"status": 308,
-			"headers": {
-				"Location": "/pols/camera"
-			}
-		},
-		{
 			"src": "/docs/oto-basics/get-started",
 			"dest": "/docs/oto-basics/get-started/"
 		},
@@ -195,9 +184,6 @@
 		}
 	],
 	"overrides": {
-		"pols/camera.html": {
-			"path": "pols/camera"
-		},
 		"docs/oto-basics/get-started.html": {
 			"path": "docs/oto-basics/get-started"
 		},

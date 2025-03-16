@@ -5,11 +5,14 @@ const config = {
   extensions: ['.svelte', '.md'],
 
   kit: {
-    adapter: adapter(),
+    adapter: adapter({fallback: 'index2.html'}),
     paths: {
       //relative: true,
     },
-    
+    // prerender: {
+    //   entries: ['*'],
+    //   handleMissingId: 'warn',
+    // },
   },
 };
 

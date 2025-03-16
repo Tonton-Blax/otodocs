@@ -1,3 +1,4 @@
+export const prerender = false;
 export function GET() {
     return new Response(`User-agent: *
         Disallow: /admin/
