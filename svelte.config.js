@@ -5,7 +5,7 @@ const config = {
   extensions: ['.svelte', '.md'],
 
   kit: {
-    adapter: adapter({fallback: 'index2.html'}),
+    adapter: adapter(),
     paths: {
       //relative: true,
     },
