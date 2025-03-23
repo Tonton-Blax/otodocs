@@ -15,8 +15,6 @@ You could set this window to fullscreen mode, and set up, for instance, a remote
 To toggle between *fullscreen* mode / *floating window* mode, go to the **Options** Menu then click **Toggle display fullscreen**
 :::
 
-
-
 - By clicking the <Icon d="togglePrompter" fill="rgb(255,83,26)" stroke="rgb(255,83,26)" /> button (or with the shortchut `CTRL+P` or `⌘+P` on mac), you will switch to *prompter mode*, the toolbar will change its appearance, and you will no longer be able to edit the text from the *Prompter Editor* Panel <Number n="2" />, you can still do so from the _mini-editor_ though.
 Now, your task is to scroll the text at the speaker's pace!
 ![Prompting toolbar](/toolbar-prompting.webp)
@@ -28,6 +26,17 @@ If you are new to using a teleprompter, read the section dedicated to [tips for 
 Although these tips are primarily aimed at operators scrolling text for a speaker, most of them are also suitable for solo presentations.
 :::
 
+
+## **Mirroring & Rotation**  
+
+OtO allows you to mirror and rotate your text (on the external display) to accommodate different types of teleprompter setups, such as **camera-mounted teleprompters**, **presidential / stage prompters**
+
+You can adjust these settings directly either from the toolbar or from the menu options:  
+
+- From the toolbar: Click <Icon d="mirrorScreen" fill="rgb(255,83,26)" stroke="rgb(255,83,26)" /> button to mirror the image and / or <Icon d="rotateScreen" fill="rgb(255,83,26)" stroke="rgb(255,83,26)" /> button to rotate the image upside / down
+- From the menu: Click on ***Options*** then ***Activate Mirror Mode(ext. display)*** to mirror the image, and, still in ***Options***, ***Rotate external display*** to rotate the image 180° 
+
+These settings ensure that your text remains clear and readable in any professional setup, whether for broadcast, live events, or public speaking engagements.
 
 ## Prompting Speed
 - To adjust the scrolling / prompting speed, you can drag the blue slider next to the <Icon d="togglePrompter" fill="rgb(255,83,26)" stroke="rgb(255,83,26)" /> button. You will scroll backwards if you drag it below Zero and upwards otherwise.
