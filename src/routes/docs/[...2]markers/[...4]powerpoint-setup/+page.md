@@ -1,5 +1,5 @@
 ---
-title: Powerpoint Markers
+title: Powerpoint and Keynote Markers
 ---
 
 # {$frontmatter.title}
@@ -25,6 +25,10 @@ To control the progress of a remote PowerPoint slideshow from OtO, you need to i
 
 Once this application is installed on the other machine (or it can be the same machine), launch it, take note of the IP address displayed in the application, and set your presentation to full-screen slideshow mode.
 Launch PowerPoint in slideshow mode, then, back in OtO, go to the `⚙ Settings` -> `Network` then in the field _"Powerpoint Server configuration"_, enable the network PowerPoint option, and enter the IP address (the IP will be displayed in **otslides** user interface).
+
+:::admonition type=info
+On Mac you can also control keynote by simply switching to Keynote Mode (just click on the 'Application' drowpdown menu in OtoSlides and select Keynote)
+:::
 
 :::admonition type=warning
 If you changed the **Server Port** in the **OtOSlides** app, update the _Powerpoint Server configuration_ field accordingly. Simply append the port to the IP address after a colon `:`.
@@ -59,3 +63,12 @@ Here is the list of command supporterd by OtO and OtO-Slides to control powerpoi
 You can also import notes from a .pptX file by navigating to the `File` menu and selecting` Import Notes from .pptX`
 
 OtO will create a new text document from the powerpoint file, that aggregates all the notes from each slide in the presentation, separated by automatically created `/ppt` Action Markers corresponding to each slide. This setup allows the PowerPoint presentation to advance seamlessly as you read through the notes.
+
+## Keynote Mode
+
+On the Mac version of OtO, You can also trigger Apple Keynote slides.
+To do so, go to `⚙ Settings` -> `Markers` and click on "Treat PPT markers as Keynote".
+
+The Action Marker syntax (`/ppt:`) remains the same.
+
+For remote operations, you can simply switch the [OtOSlides](#controlloing-powerpoint-from-network) app to Keynote Mode.
