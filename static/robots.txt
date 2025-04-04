@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /docs/
 Disallow: /output/
+Disallow: /pols/
+Disallow: /index2
