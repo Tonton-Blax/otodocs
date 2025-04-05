@@ -146,3 +146,13 @@ This mode can be very useful for rehearsals, for example, where you may not want
    ![manual trigger](/markers-right-click.jpg)
 
 3. Finally, you can trigger the **next** action Marker (from the current position perspective) with the keyboard shortcut `CTRL+SHIFT+T` or `⌘+SHIFT+T` on mac
+
+## Caller Support Window
+
+OtO includes a dedicated Caller Support Window, designed to help show-callers and stage managers stay on top of timing during live events. This window displays the time remaining before the next Action Marker, providing a real-time countdown that can be essential for coordinating cues accurately.
+
+The Caller Support Window can be moved to a third monitor or set as a floating window, making it easy to keep visible alongside other production tools.
+
+To enable it, go to Menu ***Options -> Show Caller Support Window***.
+
+![The Show-Caller support window](/show-caller-window.webp)
