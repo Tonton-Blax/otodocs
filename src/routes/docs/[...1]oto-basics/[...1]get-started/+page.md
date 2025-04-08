@@ -2,9 +2,6 @@
 title: OtO at a glance
 description: OtO at a glance, Registration, update
 ---
-<svelte:head>
-  <link rel="canonical" href="https://documentation.oto.software/">
-</svelte:head>
 
 # {$frontmatter.title}
 

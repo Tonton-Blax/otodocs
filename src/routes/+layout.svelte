@@ -8,8 +8,6 @@
 
   import { page } from "$app/stores";
 
-  import SvelteLogo from "$img/logo-horiz-3.svg?raw";
-
   import {
     Button,
     KitDocs,
@@ -21,6 +19,13 @@
   import { createPostsIndex, searchPostsIndex } from "$lib/search";
   import { slide } from "svelte/transition";
   import { clickoutside } from "@svelte-put/clickoutside";
+  import LDTag from "$lib/components/LDTag.svelte";
+  import { 
+    createArticleSchema, 
+    createBreadcrumbSchema, 
+    createHowToSchema, 
+    createFAQSchema 
+  } from "$lib/utils/json-ld.js";
 
   /** @type {import('./$types').LayoutData} */
   export let data;
@@ -34,6 +39,108 @@
   $: category = $activeCategory ? `${$activeCategory}: ` : "";
   $: title = meta ? `${category}${meta.title} | Oto Documentation` : null;
   $: description = meta?.description;
+
+  /** Extract page category and subcategory from URL path */
+  function extractPathInfo(path) {
+    const parts = path.split('/').filter(Boolean);
+    let category = '';
+    let subcategory = '';
+    
+    if (parts.length > 1 && parts[0] === 'docs') {
+      // Handle the [...n] pattern in folder names
+      const categoryMatch = parts[1].match(/\[\.\.\.(\d+)\](.+)/);
+      if (categoryMatch) {
+        category = categoryMatch[2];
+      } else {
+        category = parts[1];
+      }
+      
+      if (parts.length > 2) {
+        const subcategoryMatch = parts[2].match(/\[\.\.\.(\d+)\](.+)/);
+        if (subcategoryMatch) {
+          subcategory = subcategoryMatch[2];
+        } else {
+          subcategory = parts[2];
+        }
+      }
+    }
+    
+    return {
+      category: formatPathSegment(category),
+      subcategory: formatPathSegment(subcategory)
+    };
+  }
+  
+  /** Format path segment for display (convert kebab-case to Title Case) */
+  function formatPathSegment(segment) {
+    if (!segment) return '';
+    return segment
+      .replace(/-/g, ' ')
+      .replace(/\b\w/g, l => l.toUpperCase());
+  }
+  
+  $: pathInfo = extractPathInfo($page.url.pathname);
+  $: isDocsPage = $page.url.pathname.includes('/docs/');
+  $: isGettingStartedPage = pathInfo.subcategory === 'Get Started' || 
+                            $page.url.pathname.includes('get-started') || 
+                            $page.url.pathname.includes('system-requirements') || 
+                            $page.url.pathname.includes('install');
+  $: isHowToPage = isGettingStartedPage || 
+                   $page.url.pathname.includes('guide') || 
+                   $page.url.pathname.includes('tutorial');
+
+  $: articleSchema = isDocsPage ? 
+    createArticleSchema({
+      title: title || 'OtO Documentation',
+      description: description || '',
+      url: `https://www.oto.software${$page.url.pathname}`,
+      category: pathInfo.category
+    }) : null;
+
+  $: breadcrumbSchema = isDocsPage ?
+    createBreadcrumbSchema({
+      items: [
+        {
+          name: "OtO Documentation",
+          url: "https://www.oto.software/docs/",
+          position: 1
+        },
+        {
+          name: pathInfo.category || "Documentation",
+          url: `https://www.oto.software/docs/${$page.url.pathname.split('/')[2] || ""}`,
+          position: 2
+        },
+        {
+          name: pathInfo.subcategory || title || "",
+          url: `https://www.oto.software${$page.url.pathname}`,
+          position: 3
+        }
+      ]
+    }) : null;
+
+  $: howToSchema = isHowToPage ?
+    createHowToSchema({
+      title: title || 'OtO Documentation',
+      description: description || ''
+    }) : null;
+
+  $: faqSchema = isGettingStartedPage ?
+    createFAQSchema({
+      questions: [
+        {
+          question: "What are the recommended PC specifications for OtO software?",
+          answer: "For PC, the recommended specifications are: Windows 10 (version 1607), recent x86-64 processor (Intel/AMD), 8+GB RAM (16GB recommended), NVIDIA GPU with CUDA support (e.g., GTX 1050 or better) for faster performance, and SSD storage for faster model loading."
+        },
+        {
+          question: "What are the recommended Mac specifications for OtO software?",
+          answer: "For Mac, the recommended specifications are: macOS 10.15 (Catalina), Apple Silicon (M1/M2) or Intel Mac processor, and 8GB RAM."
+        },
+        {
+          question: "How do I get started with OtO software?",
+          answer: "To get started with OtO software, download the application from the official website, install it following the instructions, and launch the application. The interface includes a toolbar for prompting/editing mode, editing window, rundown management, mini editor, markers module, search module, and settings panel."
+        }
+      ]
+    }) : null;
 
   /** @type {import('@svelteness/kit-docs').NavbarConfig} */
   const navbar = {
@@ -74,13 +181,46 @@
 <svelte:head>
   {#key $page.url.pathname}
     {#if title}
+      <link
+        rel="canonical"
+        href="https://www.oto.software{$page.url.pathname}"
+      />
       <title>{title}</title>
     {/if}
     {#if description}
       <meta name="description" content={description} />
     {/if}
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    {#if title}
+      <meta property="og:title" content={title} />
+      <meta name="twitter:title" content={title} />
+    {/if}
+    {#if description}
+      <meta property="og:description" content={description} />
+      <meta name="twitter:description" content={description} />
+    {/if}
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content={"https://www.oto.software" + $page.url.pathname} />
+    <meta name="twitter:card" content="summary_large_image" />
   {/key}
 </svelte:head>
+
+{#if articleSchema}
+  <LDTag schema={articleSchema} />
+{/if}
+
+{#if breadcrumbSchema}
+  <LDTag schema={breadcrumbSchema} />
+{/if}
+
+{#if howToSchema}
+  <LDTag schema={howToSchema} />
+{/if}
+
+{#if faqSchema}
+  <LDTag schema={faqSchema} />
+{/if}
 
 <KitDocs {meta}>
   <KitDocsLayout {navbar} {sidebar} search>
@@ -142,7 +282,7 @@
             }
           </style>
           <path
-            d="M37.9 41.1c3.1 0 5.8.7 8.3 2.1 2.5 1.4 4.3 3.2 5.7 5.6 1.4 2.4 2.1 5.1 2.1 8.1s-.6 5.7-2 8.1c-1.4 2.4-3.3 4.3-5.8 5.6-2.5 1.4-5.2 2.1-8.3 2.1s-5.8-.7-8.3-2.1-4.3-3.2-5.7-5.6c-1.4-2.4-2.1-5.1-2.1-8.1s.7-5.7 2.1-8.1c1.4-2.4 3.3-4.3 5.8-5.6 2.4-1.4 5.1-2.1 8.2-2.1m0-4c-3.8 0-7.2.9-10.3 2.6-3.1 1.7-5.5 4.1-7.2 7.1-1.8 3-2.6 6.4-2.6 10.1 0 3.7.9 7.1 2.6 10.1 1.8 3 4.2 5.4 7.2 7.1 3.1 1.7 6.5 2.6 10.3 2.6s7.2-.9 10.3-2.6 5.5-4.1 7.2-7.1c1.8-3 2.6-6.4 2.6-10.1 0-3.7-.9-7.1-2.6-10.1-1.8-3-4.2-5.4-7.2-7.1-3.1-1.8-6.5-2.6-10.3-2.6zm71.1 4c3.1 0 5.8.7 8.3 2.1 2.5 1.4 4.3 3.2 5.7 5.6 1.4 2.4 2.1 5.1 2.1 8.1s-.7 5.7-2.1 8.1c-1.4 2.4-3.3 4.3-5.8 5.6-2.5 1.4-5.2 2.1-8.3 2.1-3.1 0-5.8-.7-8.3-2.1s-4.3-3.2-5.7-5.6c-1.4-2.4-2.1-5.1-2.1-8.1s.7-5.7 2.1-8.1c1.4-2.4 3.3-4.3 5.8-5.6 2.4-1.4 5.2-2.1 8.3-2.1m0-4c-3.8 0-7.2.9-10.3 2.6-3.1 1.7-5.5 4.1-7.2 7.1-1.8 3-2.6 6.4-2.6 10.1 0 3.7.9 7.1 2.6 10.1 1.8 3 4.2 5.4 7.2 7.1 3.1 1.7 6.5 2.6 10.3 2.6s7.2-.9 10.3-2.6c3.1-1.7 5.5-4.1 7.2-7.1 1.8-3 2.6-6.4 2.6-10.1 0-3.7-.9-7.1-2.6-10.1-1.8-3-4.2-5.4-7.2-7.1-3.1-1.8-6.5-2.6-10.3-2.6z"
+            d="M37.9 41.1c3.1 0 5.8.7 8.3 2.1 2.5 1.4 4.3 3.2 5.7 5.6 1.4 2.4 2.1 5.1 2.1 8.1s-.6 5.7-2 8.1c-1.4 2.4-3.3 4.3-5.8 5.6-2.5 1.4-5.2 2.1-8.3 2.1s-5.8-.7-8.3-2.1-4.3-3.2-5.7-5.6c-1.4-2.4-2.1-5.1-2.1-8.1s.7-5.7 2.1-8.1c1.4-2.4 3.3-4.3 5.8-5.6 2.4-1.4 5.1-2.1 8.2-2.1m0-4c-3.8 0-7.2.9-10.3 2.6-3.1 1.7-5.5 4.1-7.2 7.1-1.8 3-2.6 6.4-2.6 10.1 0 3.7.9 7.1 2.6 10.1 1.8 3 4.2 5.4 7.2 7.1 3.1 1.7 6.5 2.6 10.3 2.6s7.2-.9 10.3-2.6 5.5-4.1 7.2-7.1c1.8-3 2.6-6.4 2.6-10.1 0-3.7-.9-7.1-2.6-10.1-1.8-3-4.2-5.4-7.2-7.1-3.1-1.8-6.5-2.6-10.3-2.6z"
             class="st0"
           />
           <path
