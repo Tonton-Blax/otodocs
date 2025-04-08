@@ -27,7 +27,7 @@ export function createArticleSchema(params) {
       "name": "OtO Software",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://documentation.oto.software/favicon.png"
+        "url": "https://documentation.oto.software/logo.png"
       }
     },
     "mainEntityOfPage": {
@@ -37,7 +37,7 @@ export function createArticleSchema(params) {
     "isPartOf": {
       "@type": "WebSite",
       "name": "OtO Documentation",
-      "url": "https://www.oto.software/docs/"
+      "url": "https://documentation.oto.software/docs/"
     },
     "about": {
       "@type": "SoftwareApplication",
@@ -71,8 +71,7 @@ export function createBreadcrumbSchema(params) {
  * Creates a HowTo schema for tutorial pages
  */
 export function createHowToSchema(params) {
-  const { title, description, steps } = params;
-  
+  const { title, description, steps } = params;  
   return {
     "@context": "https://schema.org",
     "@type": "HowTo",

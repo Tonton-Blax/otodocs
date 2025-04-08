@@ -91,7 +91,7 @@ You cannot assign a key or button to a command that is already assigned. To reso
 The [Loupedeck CT controller](https://loupedeck.com/products/loupedeck-ct/) is the currently recommended way to control OtO. It can be configured to work with OtO through their custom software. This highly versatile controller offer a very convenient and smooth knob for precise scrolls, buttons, and touch controls for comprehensive OtO operation.
 
 For Loupedeck configuration:
-1. Install the Loupedeck software and load the [custom profiles](https://www.oto.software/#utilities) for OtO (available on [oto.software](https://oto.software) website).
+1. Install the Loupedeck software and load the [custom profiles](https://documentation.oto.software/#utilities) for OtO (available on [oto.software](https://oto.software) website).
 2. Make sure the keyboard controler is enabled in the settings, and the reset the key bindings to factory settings if you changed them
 
 ## Speed Setting Configuration

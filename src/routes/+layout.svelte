@@ -93,7 +93,7 @@
     createArticleSchema({
       title: title || 'OtO Documentation',
       description: description || '',
-      url: `https://www.oto.software${$page.url.pathname}`,
+      url: `https://documentation.oto.software${$page.url.pathname}`,
       category: pathInfo.category
     }) : null;
 
@@ -102,17 +102,17 @@
       items: [
         {
           name: "OtO Documentation",
-          url: "https://www.oto.software/docs/",
+          url: "https://documentation.oto.software/docs/",
           position: 1
         },
         {
           name: pathInfo.category || "Documentation",
-          url: `https://www.oto.software/docs/${$page.url.pathname.split('/')[2] || ""}`,
+          url: `https://documentation.oto.software/docs/${$page.url.pathname.split('/')[2] || ""}`,
           position: 2
         },
         {
           name: pathInfo.subcategory || title || "",
-          url: `https://www.oto.software${$page.url.pathname}`,
+          url: `https://documentation.oto.software${$page.url.pathname}`,
           position: 3
         }
       ]
@@ -183,7 +183,7 @@
     {#if title}
       <link
         rel="canonical"
-        href="https://www.oto.software{$page.url.pathname}"
+        href="https://documentation.oto.software{$page.url.pathname}"
       />
       <title>{title}</title>
     {/if}
@@ -201,7 +201,7 @@
       <meta name="twitter:description" content={description} />
     {/if}
     <meta property="og:type" content="article" />
-    <meta property="og:url" content={"https://www.oto.software" + $page.url.pathname} />
+    <meta property="og:url" content={"https://documentation.oto.software" + $page.url.pathname} />
     <meta name="twitter:card" content="summary_large_image" />
   {/key}
 </svelte:head>
