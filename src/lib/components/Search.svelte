@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte";
+  import { base } from "$app/paths";
   import FlexSearch from "flexsearch";
 
   let searchTerm = $state("");
@@ -58,7 +59,7 @@
 
   onMount(async () => {
     try {
-      const data = await fetch("/search.json").then((r) => r.json());
+      const data = await fetch(`${base}/search.json`).then((r) => r.json());
       createPostsIndex(data);
       ready = true;
     } catch (e) {
@@ -117,7 +118,7 @@
       <ul>
         {#each results as result}
           <li>
-            <a href="/{result.slug}" onclick={() => { open = false; searchTerm = ""; }}>
+            <a href="{base}/{result.slug}" onclick={() => { open = false; searchTerm = ""; }}>
               {@html result.title}
             </a>
             <p>{@html result.content}</p>
