@@ -1,9 +1,9 @@
 <script>
   import { serializeSchema } from '$lib/utils/json-ld';
   
-  export let schema;
+  let { schema } = $props();
 </script>
 
 <svelte:head>
   {@html serializeSchema(schema)}
-</svelte:head> 
+</svelte:head>

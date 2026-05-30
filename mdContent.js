@@ -17,7 +17,6 @@ function cleanSlug(relativePath) {
     "/" +
     relativePath
       .replace(/\.md$/, "")
-      .replace(/\[...\d+\]/g, "")
       .replace(/\/\+page$/, "")
       .split("/")
       .filter(Boolean)

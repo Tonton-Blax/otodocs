@@ -1,18 +1,18 @@
-import adapter from '@sveltejs/adapter-vercel'
+import adapter from "@sveltejs/adapter-static";
+import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  extensions: ['.svelte', '.md'],
-
+  extensions: [".svelte", ".md"],
+  preprocess: [vitePreprocess()],
   kit: {
-    //adapter: adapter({fallback: 'index2.html'}),
     adapter: adapter({}),
     paths: {
-      //relative: true,
+      relative: false,
     },
     prerender: {
-      entries: ['*'],
-      handleMissingId: 'warn',
+      entries: ["*"],
+      handleMissingId: "warn",
     },
   },
 };

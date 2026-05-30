@@ -1,0 +1,124 @@
+diff --git a/dist/components/LastUpdate.svelte b/dist/components/LastUpdate.svelte
+index ce1838bd862b4537d878015e7013bb13e60bf837..bc1bcaebc38f939f91d562e721442edcd5e9999d 100644
+--- a/dist/components/LastUpdate.svelte
++++ b/dist/components/LastUpdate.svelte
+@@ -12,7 +12,7 @@
+   const DEFAULT_TEXT = 'Last update at:'
+ </script>
+ 
+-{#if lastUpdate}
++{#if lastUpdate && lastUpdate !== 'Invalid Date'}
+   <div class="last-update">
+     {themeOptions.i18n?.lastUpdateAt || DEFAULT_TEXT}
+     {lastUpdate}
+diff --git a/dist/components/Navbar.svelte b/dist/components/Navbar.svelte
+index c458414b20e630dc380f5ddf78a499e5ab4623fd..f7f785b104cc35801d900a371649d8aee8187a2b 100644
+--- a/dist/components/Navbar.svelte
++++ b/dist/components/Navbar.svelte
+@@ -11,28 +11,15 @@
+   import NavbarMobile from './NavbarMobile.svelte'
+   import NavItem from './NavItem.svelte'
+   import ToggleDark from './ToggleDark.svelte'
++  import Search from '$search'
+ 
+   const routeId = $derived(page.route.id)
+   const isHome = $derived(routeId === '/')
+   const hasError = $derived(page.error)
+ 
+   let docsearchComponent = $state<Component | undefined>()
+-  let searchComponent = $state<Component | undefined>()
+ 
+   onMount(async () => {
+-    // Load custom search component if it's a string path
+-    if (themeOptions.search && typeof themeOptions.search === 'string') {
+-      try {
+-        searchComponent = (await import(/* @vite-ignore */ themeOptions.search))
+-          .default
+-      } catch (e) {
+-        console.error(
+-          '[sveltepress] Failed to load custom search component:',
+-          e,
+-        )
+-      }
+-    }
+-
+     // Load docsearch if no custom search is provided
+     if (themeOptions.docsearch && !themeOptions.search) {
+       try {
+@@ -56,13 +43,13 @@
+         </div>
+       {/if}
+     </div>
+-    {#if searchComponent || (themeOptions.search && typeof themeOptions.search !== 'string')}
++    {#if themeOptions.search}
+       <div
+         class:is-home={isHome}
+         class:move={!isHome && !hasError}
+         class="doc-search"
+       >
+-        <svelte:component this={searchComponent || themeOptions.search} />
++        <Search />
+       </div>
+     {:else if themeOptions.docsearch && docsearchComponent}
+       <div
+diff --git a/dist/components/Toc.svelte b/dist/components/Toc.svelte
+index d6684789d84f2f93ab1dd9d14550077034ff7b4f..5eb47c658de8f6ac782969fa851b23cc99e217ca 100644
+--- a/dist/components/Toc.svelte
++++ b/dist/components/Toc.svelte
+@@ -28,10 +28,19 @@
+ 
+   let mounted = false
+ 
++  function normalizeSlug(slugId) {
++    if (!slugId) return ''
++    return slugId.toLowerCase().replace(/-{2,}/g, '-').replace(/^-|-$/g, '')
++  }
++
+   function computeActiveIdx() {
+     if (!mounted) return
+     const positions = anchors.map(
+-      ({ slugId }) => document.getElementById(slugId).offsetTop,
++      ({ slugId }) => {
++        const el = document.getElementById(normalizeSlug(slugId)) || document.getElementById(slugId)
++        if (!el) return 0
++        return el.offsetTop
++      },
+     )
+     for (let i = 0; i < positions.length; i++) {
+       const pos = positions[i]
+@@ -77,7 +86,7 @@
+       {#each anchors as an, i}
+         {@const active = activeIdx === i}
+         <a
+-          href="#{an.slugId}"
++          href="#{normalizeSlug(an.slugId) || an.slugId}"
+           class="item"
+           class:active
+           style="--heading-depth: {an.depth < 2 ? 2 : an.depth};"
+diff --git a/dist/markdown/anchors.js b/dist/markdown/anchors.js
+index 9fa80230a2c83d5576c12e570f8db152de858ff2..69b6c871850a60aab0a674329bafe1ab64fcf7b1 100644
+--- a/dist/markdown/anchors.js
++++ b/dist/markdown/anchors.js
+@@ -1,4 +1,11 @@
+ import { visit } from 'unist-util-visit';
++function extractText(children) {
++    return children.map(function (c) {
++        if (c.type === 'text' || c.type === 'inlineCode' || c.type === 'SvpHeading') return c.value || '';
++        if (c.children) return extractText(c.children);
++        return '';
++    }).join('');
++}
+ var anchors = function () {
+     return function (tree, vFile) {
+         var anchors = [];
+@@ -13,8 +20,8 @@ var anchors = function () {
+                 else {
+                     node.data.anchorAdded = true;
+                 }
+-                var title = node.children.filter(function (c) { return ['text', 'inlineCode', 'SvpHeading'].includes(c.type); }).map(function (c) { return c.value; }).join('');
+-                var slugId_1 = title.replace(/[&#$?* :/]/g, '-');
++                var title = extractText(node.children);
++                var slugId_1 = title.trim().toLowerCase().replace(/[&#$?*:+/]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+                 while (anchors.some(function (an) { return an.slugId === slugId_1; }))
+                     slugId_1 += '_';
+                 node.children.unshift({

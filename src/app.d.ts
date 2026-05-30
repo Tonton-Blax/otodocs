@@ -1,14 +1,9 @@
-/// <reference types="@svelteness/kit-docs/globals" />
+/// <reference types="@sveltejs/kit" />
+/// <reference types="@sveltepress/vite/types" />
+/// <reference types="@sveltepress/theme-default/types" />
 
-// See https://kit.svelte.dev/docs/types#app
-// for information about these interfaces
 declare global {
-	namespace App {
-		// interface Error {}
-		// interface Locals {}
-		// interface PageData {}
-		// interface Platform {}
-	}
+  namespace App {}
 }
 
-export {};
+export {}
